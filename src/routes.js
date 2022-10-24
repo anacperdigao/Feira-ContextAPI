@@ -8,19 +8,17 @@ import { UsuarioProvider } from '../src/common/context/Usuario'
 function Router () {
 
     return (
+        <UsuarioProvider> 
+            <BrowserRouter>
+                <Routes>
 
-        <BrowserRouter>
-            <Routes>
-            
-            <UsuarioProvider>
-                <Route exact path='/' element={<Login />} />
-            </UsuarioProvider>
+                    <Route exact path='/' element={ <Login /> }/>
+                    <Route path='/feira' element={ <Feira /> } />
+                    <Route path='/carrinho' element={<Carrinho />} />
 
-            <Route path='/feira' element={<Feira />} />
-            <Route path='/carrinho' element={<Carrinho />} />
-
-            </Routes>
-      </BrowserRouter>
+                </Routes>
+            </BrowserRouter>
+        </UsuarioProvider>
 
     )
 }
