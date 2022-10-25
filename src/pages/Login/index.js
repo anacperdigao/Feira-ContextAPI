@@ -37,6 +37,7 @@ function Login() {
       <Button
         variant="contained"
         color="primary"
+        disabled={nome.length < 3} // Validação se o nome digitado tem 4 caracteres no minimo para habilitar o botao
         onClick={() => navigate('/feira')} // Aqui eu digo que no clique, quero que me jogue para a rota "/feira"
       >
         Avançar
