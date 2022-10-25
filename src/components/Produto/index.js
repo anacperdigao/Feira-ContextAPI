@@ -16,6 +16,29 @@ function Produto({
 
   const {carrinho, setCarrinho} = useContext(CarrinhoContext) //Ja recebo as propriedades desestruturando
 
+  function adicionaProduto(novoProduto) {
+    // Nessa const eu vou ver se já existe aquele produto
+    // some retorna boolean, entao pra cada itemDoCarrinho, vou testar se essa id é igual a id do novo produto
+    const temOProduto = carrinho.some(itemDoCarrinho => itemDoCarrinho.id === novoProduto.id)
+
+    if (!temOProduto) {
+      novoProduto.quantidade = 1;
+      return setCarrinho(carrinhoAnterior => [...carrinhoAnterior, novoProduto])
+    } // Aqui eu fiz o if se nao tiver o produto no carrinho
+    
+    // Agora eu vou colocar direto o que fazer se tiver no carrinho
+    // Eu utilizei map pq eu vou andar pelo array do carrinho anterior, 
+    // e se eu ja encontrar o mesmo itemDoCarrinho, só vou adicionar a quantidade.
+    setCarrinho(carrinhoAnterior => carrinhoAnterior.map(itemDoCarrinho => {
+      if (itemDoCarrinho.id === novoProduto.id) {
+        itemDoCarrinho.quantidade += 1
+      }
+
+      return itemDoCarrinho
+    }))
+
+  }
+
   return (
       <Container>
         <div>
@@ -33,9 +56,7 @@ function Produto({
           >
             <RemoveIcon />
           </IconButton>
-          <IconButton onClick={() => {
-            setCarrinho(carrinhoAnterior => [...carrinhoAnterior, {nome, foto, id, valor}])
-          }}>
+          <IconButton onClick={() => adicionaProduto({nome, foto, id, valor})}>
             <AddIcon />
           </IconButton>
         </div>
