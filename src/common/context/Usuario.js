@@ -3,6 +3,7 @@ import { createContext, useState } from 'react';
 
 
 export const UsuarioContext = createContext();
+UsuarioContext.displayName = 'Usuario'; // Isso aqui só serve pra visualizar o nome do contexto no devtools
 
 
 export const UsuarioProvider = ({ children }) => {
