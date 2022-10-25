@@ -4,24 +4,25 @@ import Login from 'pages/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { UsuarioProvider } from '../src/common/context/Usuario'
 import { CarrinhoProvider } from '../src/common/context/Carrinho'
+import { PagamentoProvider } from 'common/context/Pagamento';
 
 function Router () {
 
     return (
         <UsuarioProvider> 
-            <BrowserRouter>
-                <Routes>
+            <CarrinhoProvider>
+                <PagamentoProvider>
+                    <BrowserRouter>
+                        <Routes>
 
-                    <Route exact path='/' element={ <Login /> }/>
-                    <Route path='/feira' element={ 
-                        <CarrinhoProvider>
-                            <Feira /> 
-                        </CarrinhoProvider>
-                    }/>
-                    <Route path='/carrinho' element={<Carrinho />} />
+                            <Route exact path='/' element={ <Login /> }/>
+                            <Route path='/feira' element={ <Feira /> }/>
+                            <Route path='/carrinho' element={ <Carrinho /> } />
 
-                </Routes>
-            </BrowserRouter>
+                        </Routes>
+                    </BrowserRouter>
+                </PagamentoProvider>
+            </CarrinhoProvider>
         </UsuarioProvider>
 
     )

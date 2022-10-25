@@ -1,4 +1,6 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+import { usePagamentoContext } from './Pagamento';
+import { UsuarioContext } from './Usuario';
 
 
 export const CarrinhoContext = createContext();
@@ -7,8 +9,12 @@ CarrinhoContext.displayName = 'Carrinho'; // Isso aqui só serve pra visualizar 
 
 export const CarrinhoProvider = ({ children }) => {
     const [carrinho, setCarrinho] = useState([]);
+    const [quantidadeProdutos, setQuantidadeProdutos] = useState(0);
+    const [valorTotalCarrinho, setValorTotalCarrinho] = useState(0)
+
     return(
-        <CarrinhoContext.Provider value={{carrinho, setCarrinho}}>
+        <CarrinhoContext.Provider 
+        value={{carrinho, setCarrinho, quantidadeProdutos, setQuantidadeProdutos, valorTotalCarrinho, setValorTotalCarrinho}}>
             {children}
         </CarrinhoContext.Provider>
     )
@@ -19,7 +25,12 @@ export const CarrinhoProvider = ({ children }) => {
 // ao mesmo tempo, utilizar esse contexto.
 // Depois de criar, vou mudar lá no componente Produto para useCarrinhoContext no lugar de useContext.
 export const useCarrinhoContext = () => {
-    const { carrinho, setCarrinho } = useContext(CarrinhoContext);
+    const { carrinho, setCarrinho, quantidadeProdutos, setQuantidadeProdutos, 
+        valorTotalCarrinho, setValorTotalCarrinho } = useContext(CarrinhoContext);
+
+    const { formaPagamento } = usePagamentoContext()
+
+    const { setSaldo } = useContext(UsuarioContext)
 
 
     function adicionaProduto(novoProduto) {
@@ -64,10 +75,39 @@ export const useCarrinhoContext = () => {
     } 
 
 
+    function efetuarCompra (){
+        setCarrinho([]) //Zerei o carrinho aqui
+        setSaldo(saldoAtual => saldoAtual - valorTotalCarrinho)
+
+    }
+
+
+    //Aqui vou colocar uma escuta no carrinho para conseguir ter o contador(quantidade de itens)
+    //Para isso, vou usar o useEffect, e no colchete eu coloco o que eu quero escutar.
+    //Leambrando que o reduce precisa de uma funcao callback e o valor inicial da contagem que vai ser 0
+    useEffect(() => {
+        const { novoTotal, novaQuantidade} = carrinho.reduce((contador, produto) => ({
+            novaQuantidade: contador.novaQuantidade + produto.quantidade,
+            novoTotal: contador.novoTotal + (produto.valor * produto.quantidade)
+        }), {novaQuantidade: 0, novoTotal: 0}
+        )
+        //Vou criar um estado la no CarrinhoProvider pra contar a quantidade
+
+        setQuantidadeProdutos(novaQuantidade)
+        setValorTotalCarrinho(novoTotal * formaPagamento.juros)
+    }, [carrinho, setQuantidadeProdutos, setValorTotalCarrinho, formaPagamento])
+
+
+
+    
     return {
         carrinho, 
         setCarrinho,
         adicionaProduto,
-        retiraProduto
+        retiraProduto,
+        quantidadeProdutos,
+        setQuantidadeProdutos,
+        valorTotalCarrinho,
+        efetuarCompra
     }
 }
