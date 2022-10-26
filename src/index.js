@@ -1,7 +1,13 @@
-import { ThemeProvider, createTheme } from '@material-ui/core/styles';
-import { StylesProvider } from '@material-ui/core/styles';
+// Material UI
+import { ThemeProvider, createTheme, StylesProvider } from '@material-ui/core/styles';
+
+// React
 import React from 'react';
+
+// React-Dom
 import ReactDOM from 'react-dom';
+
+// Outros arquivos
 import Router from 'routes';
 import './index.css';
 

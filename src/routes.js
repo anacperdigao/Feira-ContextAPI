@@ -1,10 +1,16 @@
+// Páginas
 import Carrinho from 'pages/Carrinho';
 import Feira from 'pages/Feira';
 import Login from 'pages/Login';
+
+// React-router-dom
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+// Context Providers
 import { UsuarioProvider } from '../src/common/context/Usuario'
 import { CarrinhoProvider } from '../src/common/context/Carrinho'
 import { PagamentoProvider } from 'common/context/Pagamento';
+
 
 function Router () {
 
