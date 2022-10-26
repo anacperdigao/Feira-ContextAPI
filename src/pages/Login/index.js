@@ -1,10 +1,19 @@
-import { Button } from '@material-ui/core';
+// CSS
 import { Container, Titulo, InputContainer } from './styles';
-import { Input, InputLabel, InputAdornment } from '@material-ui/core';
+
+// Material UI
+import { Input, InputLabel, InputAdornment, Button } from '@material-ui/core';
+
+// React-router-dom
 import { useNavigate } from 'react-router-dom'
-import { UsuarioContext } from '../../common/context/Usuario'
+
+// React
 import { useContext } from 'react';
-// Na hora de consumir o context, ele só aceita dentro de chaves e sendo um retorno da função
+
+// Contexto
+import { UsuarioContext } from '../../common/context/Usuario'
+
+
 
 function Login() {
 
