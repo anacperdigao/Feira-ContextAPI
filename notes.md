@@ -9,3 +9,16 @@
         - Componente NavBar
     - Carrinho
         - Componente Produto
+
+
+--------------------------------- Códigos mais importantes/Aprendizados -------------------------------------
+
+- Página Login:
+    - hook useNavigate do react-router-dom para me direcionar para a página que eu quero
+    - hook useContext do React para poder consumir um contexto
+    - utilização do contexto de usuário apenas
+
+- Contexto Usuário
+    - criação do UsuárioContext com createContext()
+    - criação do UsuarioProvider que recebe e retorna o usuarioContext
+    - vou criar dois estados: nome e saldo
