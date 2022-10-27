@@ -1,8 +1,17 @@
+// Styled Components
 import { Container, Header, Lista } from './styles';
+
+// JSON
 import feira from './feira.json';
+
+// Componentes
 import Produto from 'components/Produto';
 import NavBar from './NavBar';
+
+// Contexto
 import { UsuarioContext } from '../../common/context/Usuario'
+
+// React
 import { useContext } from 'react';
 
 

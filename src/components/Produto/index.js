@@ -1,18 +1,19 @@
+// Styled-components
 import { Container } from './styles';
+
+// React
 import { memo } from 'react';
+
+// Material UI
 import { IconButton } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
+
+// Contexto
 import { useCarrinhoContext } from '../../common/context/Carrinho'
 
 
-function Produto({
-  nome,
-  foto,
-  id,
-  valor,
-  unidade
-}) {
+function Produto({ nome, foto, id, valor }) {
 
   const { carrinho, adicionaProduto, retiraProduto } = useCarrinhoContext() //Ja recebo as propriedades desestruturando
   const produtoNoCarrinho = carrinho.find(itemDoCarrinho => itemDoCarrinho.id === id)
