@@ -16,9 +16,21 @@
 - Página Login:
     - hook useNavigate do react-router-dom para me direcionar para a página que eu quero
     - hook useContext do React para poder consumir um contexto
-    - utilização do contexto de usuário apenas
+    - utilização do contexto de usuário
 
 - Contexto Usuário
     - criação do UsuárioContext com createContext()
     - criação do UsuarioProvider que recebe e retorna o usuarioContext
     - vou criar dois estados: nome e saldo
+
+- Página Feira
+    - utilização do contexto de usuário nessa página
+
+    - Componente NavBar
+        - hook useNavigate do react-router-dom para me direcionar para a página que eu quero
+        - utilização do contexto de carrinho
+    
+    - Componente Produto
+        - utilização do contexto de carrinho
+
+- Contexto Carrinho
