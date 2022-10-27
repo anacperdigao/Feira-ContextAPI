@@ -23,6 +23,9 @@
     - criação do UsuarioProvider que recebe e retorna o usuarioContext
     - vou criar dois estados: nome e saldo
 
+
+
+
 - Página Feira
     - utilização do contexto de usuário nessa página
 
@@ -34,3 +37,15 @@
         - utilização do contexto de carrinho
 
 - Contexto Carrinho
+    - criei 3 estados: 
+        - carrinho (lista de produtos no carrinho)
+        - quantidade de produtos
+        - valor total do carrinho 
+    - criei um hook que consome o contexto do carrinho
+        - nesse hook eu consumi variáveis de outros contextos também 
+        - nesse hook eu criei as funções: adicionaProduto, retiraProduto, efetuarCompra, useEffect para ter um contador no carrinho.
+
+
+
+
+- Página Carrinho

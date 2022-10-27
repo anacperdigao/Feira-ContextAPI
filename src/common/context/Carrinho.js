@@ -84,7 +84,7 @@ export const useCarrinhoContext = () => {
 
     //Aqui vou colocar uma escuta no carrinho para conseguir ter o contador(quantidade de itens)
     //Para isso, vou usar o useEffect, e no colchete eu coloco o que eu quero escutar.
-    //Leambrando que o reduce precisa de uma funcao callback e o valor inicial da contagem que vai ser 0
+    //Lembrando que o reduce precisa de uma funcao callback e o valor inicial da contagem que vai ser 0
     useEffect(() => {
         const { novoTotal, novaQuantidade} = carrinho.reduce((contador, produto) => ({
             novaQuantidade: contador.novaQuantidade + produto.quantidade,
