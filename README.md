@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+<h1 align="center"> Carrinho de compras </h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2 align="center">:page_facing_up: Descrição do projeto </h2>
+<p>Essa aplicação foi desenvolvida com o objetivo de ser um site para um mercado de produtos orgânicos. Nessa aplicação o usuário pode navegar pelo produtos, escolher a quantidade desejada de cada um, e por fim, finalizar a compra na página de carrinhos, selecionando a forma de pagamento e tendo os juros aplicados de cada forma escolhida.</p>
 
-## Available Scripts
+<br>
+<p>Imagem 1: Página Inicial Login</p>
+<p align="center"><img src="https://user-images.githubusercontent.com/108142878/199961219-3e21994f-efe9-4595-a6c6-d1e3535ff0cc.png" width: 600></p>
 
-In the project directory, you can run:
+<br>
+<p>Imagem 2: Página Feira</p>
+<p align="center"><img src="https://user-images.githubusercontent.com/108142878/199961470-a6e36575-1c9a-41c6-a643-0048f64f8afa.png" width: 600></p>
 
-### `yarn start`
+<br>
+<p>Imagem 3: Página Final Carrinho</p>
+<p align="center"><img src="https://user-images.githubusercontent.com/108142878/199961617-1911e938-8142-4e74-aa06-0ae7d73f52bd.png" width: 600></p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br>
+<p>Vídeo 1: Desktop</p>
+<p align="center"><img src="https://user-images.githubusercontent.com/108142878/199961912-6f59f92f-fc78-4dc7-914b-b0f3d1c76a85.gif" width: 1000></p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+<br>
+<h2 align="center">:hourglass: Status do projeto </h2>
+<h4> :white_check_mark: Desktop - FINALIZADO :white_check_mark: </h4>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `yarn build`
+<h2 align="center">:hammer: Funcionalidades do projeto </h2>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ``Funcionalidade 1:`` Primeira página com a entrada do nome do usuário e o valor do saldo.
+- ``Funcionalidade 2:`` Segunda página onde o usuário pode adicionar ou retirar os produtos no carrinho de compra.
+- ``Funcionalidade 3:`` Terceira página que é o carrinho final onde o usuário ainda pode modificar a quantidade de produtos e finaliza a compra, selecionando a forma de pagamento e tendo os juros aplicados de cada opção.
+- ``Funcionalidade 4:`` Depois de finalizado, se o usuário tiver saldo, ele pode retornar a página da feria e continuar comprando.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
+<h2 align="center"> :dart: Objetivo de aprendizado/O que aprendi </h2>
+<p>Esse projeto foi desenvolvido com a lib React e para dar estilo, foi utilizado styled-components.</p>
+<p>Utilizei 2 conceitos extremamente importantes no aprendizado do React, que são: React Router e ContextAPI.</p>
+<p>Com o React Router eu fiz a transição de 3 páginas na aplicação: página inicial do usuário, página da feira com os produtos e página final para realizar a compra.</p>
+<p>Com o uso de contextos através do ContextAPI, pude utilizar propriedades de forma mais fluida, sem precisar ficar passando props por componentes intermediários.</p>
+<p>Além de tudo, os contextos isolam todo o raciocínio em um arquivo, deixando os componentes apenas com a função de receber as props e renderizar. </p>
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br>
+<h2 align="center"> :file_folder: Acesso ao projeto </h2>
+<p> Você pode acessar o projeto final clicando aqui: https://feira-contextapi.vercel.app/ </p>
+<br>
+<h2 align="center"> :computer: Tecnologias utilizadas </h2>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- ``React``
+- ``JavaScript``
+- ``Styled-components``
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br>
+<h2 align="center"> :heavy_check_mark: Pessoas desenvolvedoras do projeto </h2>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| <img src="https://user-images.githubusercontent.com/108142878/183316759-e46fcec3-8594-4aca-b030-66b1e07263e0.jpg" width=115><br><sub>Ana Carolina Perdigão</sub> |  <img src="https://user-images.githubusercontent.com/108142878/185829643-01d1fc55-a657-4966-a2a4-b06e3194a86c.png" width=115><br><sub>Equipe Alura</sub> |
+| :---: | :---: |
